@@ -57,5 +57,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "lodash": "^4.17.11"
+  }
 }
