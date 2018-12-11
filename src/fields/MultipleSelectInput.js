@@ -12,37 +12,32 @@ export default class MultipleSelectInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
-    this.handleOnBlur = this.handleOnBlur.bind(this)
-    this.handleOnInput = this.handleOnInput.bind(this)
     this.renderMenuItems = this.renderMenuItems.bind(this)
-    this.state = {
-      multiselect: []
-    }
   }
-  handleOnChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
-  }
-  handleOnBlur(e) {
+  handleOnChange(e) {
     this.props.onChange({ id: this.props.id, value: e.target.value })
   }
   renderMenuItems() {
+    const items = _.get(this.props, 'defaultValue', [])
     return _.map(this.props.values, (value) =>
       <MenuItem key={value.label} value={value.value}>
-        <Checkbox checked={this.state.multiselect.indexOf(value.value) > -1} />
+        <Checkbox checked={items.indexOf(value.value) > -1} />
         <ListItemText primary={value.value} />
       </MenuItem>)
   }
   handleOnInput(e) {}
   render() {
     return (
-      <FormControl>
+      <FormControl className={this.props.className ? this.props.className : ''}
+      >
         <InputLabel>{this.props.label}</InputLabel>
         <Select
           multiple
-          value={this.state.multiselect}
+          value={this.props.defaultValue ? this.props.defaultValue : []}
           onBlur={this.handleOnBlur}
           onInput={this.handleOnInput}
           onChange={this.handleOnChange}
+          error={this.props.invalid}
           name='multiselect'
           renderValue={selected => selected.join(', ')}
         >
@@ -55,5 +50,12 @@ export default class MultipleSelectInput extends React.Component {
 }
 
 MultipleSelectInput.propTypes = {
-  onChange: PropTypes.func
+  className: PropTypes.string,
+  id: PropTypes.number,
+  onChange: PropTypes.func,
+  label: PropTypes.string,
+  helperText: PropTypes.string,
+  defaultValue: PropTypes.any,
+  values: PropTypes.array,
+  invalid: PropTypes.bool
 }

@@ -1,34 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
+import React from 'react'
+import PropTypes from 'prop-types'
+import TextField from '@material-ui/core/TextField'
 
 export default class NumberInput extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
+    super(props)
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnBlur = this.handleOnBlur.bind(this)
   }
   handleOnChange(e) {
-    this.props.onChange({ id: this.props.id, value: e.target.value });
+    this.props.onChange({ id: this.props.id, value: parseInt(e.target.value) })
   }
   handleOnBlur(e) {
-    this.props.onChange({ id: this.props.id, value: e.target.value });
+    this.props.onChange({ id: this.props.id, value: parseInt(e.target.value) })
   }
   render() {
     return (
       <TextField
-        defaultValue = {this.props.defaultValue ? this.props.defaultValue : '' }
+        className={this.props.className ? this.props.className : ''}
+        defaultValue={this.props.defaultValue ? this.props.defaultValue : ''}
         onBlur={this.handleOnBlur}
-        type="number"
+        error={this.props.invalid}
+        type='number'
         label={this.props.label}
-        placeholder = {this.props.placeholder}
+        placeholder={this.props.placeholder}
         helperText={this.props.helperText}
-        margin="normal"
+        margin='normal'
       />
-    );
+    )
   }
 }
 
 NumberInput.propTypes = {
+  className: PropTypes.string,
+  id: PropTypes.number,
+  defaultValue: PropTypes.any,
+  invalid: PropTypes.bool,
   onChange: PropTypes.func,
-};
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  helperText: PropTypes.string
+}

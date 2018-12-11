@@ -12,6 +12,43 @@ npm install --save react-json-dynamic-forms
 
 ## Usage
 ```jsx
+import React, { Component } from 'react'
+import ReactJsonDynamicForms from 'react-json-dynamic-forms'
+import metaData from './metaData'
+import './index.css'
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      elements: [
+        { id: 0, type: 'firstName', value: 'Bruce'},
+        { id: 1, type: 'lastName', value: 'Lee'},
+        { id: 2, type: 'age', value: '18'},
+        { id: 3, type: 'dob'},
+        { id: 4, type: 'gender'},
+        { id: 5, type: 'hobbies'},
+      ]
+    }
+    this.onChange = this.onChange.bind(this)
+  }
+  onChange(elements) {
+    this.setState({ elements: elements })
+  }
+  render() {
+    return (
+    <ReactJsonDynamicForms
+      elements={this.state.elements}
+      onChange={this.onChange}
+      metaData={metaData}
+      className='reactform'
+    />)
+  }
+}
+
+App.propTypes = {
+}
+```
+```jsx
 const metaData = {
   firstName: {
     type: 'TextInput',
@@ -19,7 +56,7 @@ const metaData = {
     placeholder: 'first name',
     helperText: 'First Name',
     disabled: false,
-    className: '',
+    className: 'firstName',
     readOnly: false,
     values: null
   },
@@ -29,7 +66,7 @@ const metaData = {
     placeholder: 'Name',
     helperText: 'last name',
     disabled: false,
-    className: '',
+    className: 'lastName',
     readOnly: false,
     dataType: 'string',
     values: null
@@ -38,14 +75,17 @@ const metaData = {
     type: 'NumberInput',
     label: 'age',
     placeholder: 'age',
+    className: 'age',
     helperText: 'Age',
     dataType: 'number',
-    values: null
+    values: null,
+    validation: 'required|min:18',
   },
   dob: {
     type: 'DateInput',
     label: '',
     placeholder: '',
+    className: 'dob',
     helperText: 'Date of Birth',
     dataType: 'string',
     values: null
@@ -54,6 +94,7 @@ const metaData = {
     type: 'SelectInput',
     label: 'Select',
     placeholder: '',
+    className: 'gender',
     helperText: 'Gender',
     dataType: 'string',
     values: [
@@ -72,6 +113,7 @@ const metaData = {
     label: '',
     placeholder: '',
     helperText: 'Hobbies',
+    className: 'hobbies',
     dataType: 'string',
     values: [
       {
@@ -87,40 +129,7 @@ const metaData = {
 }
 export default metaData
 ```
-```jsx
-import React, { Component } from 'react'
-import ReactJsonDynamicForms from 'react-json-dynamic-forms'
-import metaData from './metaData'
-export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      elements: [
-        { id: 0, type: 'firstName', value: 'Read Only', xs: 4 },
-        { id: 1, type: 'lastName', value: 'weeeee', xs: 4 },
-        { id: 2, type: 'age', value: '312312', xs: 4 },
-        { id: 3, type: 'dob', xs: 4 },
-        { id: 4, type: 'gender', xs: 4 },
-        { id: 5, type: 'hobbies',
-        }
-      ]
-    }
-    this.onChange = this.onChange.bind(this)
-  }
-  onChange(elements) {
-    this.setState({ elements: elements })
-  }
-  render() {
-    return (<ReactJsonDynamicForms
-      elements={this.state.elements}
-      onChange={this.onChange}
-      metaData={metaData}
-    />)
-  }
-}
-App.propTypes = {
-}
-```
+
 
 ## License
 

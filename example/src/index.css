@@ -2,4 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  text-align: center;
+}
+.reactform {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+.firstName {
+  width: 250px;
+}
+.lastName {
+  width: 250px;
+}
+.age {
+  width: 250px;
+}
+.dob {
+  width: 250px;
+}
+.gender {
+  width: 250px;
+}
+.hobbies {
+  width: 250px;
 }

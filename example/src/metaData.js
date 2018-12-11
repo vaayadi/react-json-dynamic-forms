@@ -1,13 +1,14 @@
-const MetatData = {
+const metaData = {
   firstName: {
     type: 'TextInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
     disabled: false,
-    className: '',
+    className: 'firstName',
     readOnly: false,
-    values: null
+    values: null,
+    validation: 'required'
   },
   lastName: {
     type: 'TextInput',
@@ -15,23 +16,27 @@ const MetatData = {
     placeholder: 'Name',
     helperText: 'last name',
     disabled: false,
-    className: '',
+    className: 'lastName',
     readOnly: false,
     dataType: 'string',
-    values: null
+    values: null,
+    validation: 'required'
   },
   age: {
     type: 'NumberInput',
     label: 'age',
     placeholder: 'age',
+    className: 'age',
     helperText: 'Age',
     dataType: 'number',
-    values: null
+    values: null,
+    validation: 'required|min:18',
   },
   dob: {
     type: 'DateInput',
     label: '',
     placeholder: '',
+    className: 'dob',
     helperText: 'Date of Birth',
     dataType: 'string',
     values: null
@@ -40,6 +45,7 @@ const MetatData = {
     type: 'SelectInput',
     label: 'Select',
     placeholder: '',
+    className: 'gender',
     helperText: 'Gender',
     dataType: 'string',
     values: [
@@ -58,6 +64,7 @@ const MetatData = {
     label: '',
     placeholder: '',
     helperText: 'Hobbies',
+    className: 'hobbies',
     dataType: 'string',
     values: [
       {
@@ -71,4 +78,4 @@ const MetatData = {
     ]
   }
 }
-export default MetatData
+export default metaData

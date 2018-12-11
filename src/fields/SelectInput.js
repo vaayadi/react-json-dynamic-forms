@@ -10,19 +10,10 @@ export default class SelectInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
-    this.handleOnBlur = this.handleOnBlur.bind(this)
-    this.handleOnInput = this.handleOnInput.bind(this)
     this.renderMenuItems = this.renderMenuItems.bind(this)
-    this.state = {
-      select: this.props.defaultValue ? this.props.defaultValue : ''
-    }
   }
   handleOnChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
     this.props.onChange({ id: this.props.id, value: event.target.value })
-  }
-  handleOnBlur(e) {
-    this.props.onChange({ id: this.props.id, value: e.target.value })
   }
   renderMenuItems() {
     return _.map(this.props.values, (value) =>
@@ -31,12 +22,13 @@ export default class SelectInput extends React.Component {
   handleOnInput(e) {}
   render() {
     return (
-      <FormControl>
+      <FormControl
+        className={this.props.className ? this.props.className : ''}
+      >
         <InputLabel>{this.props.label}</InputLabel>
         <Select
-          value={this.state.select}
-          onBlur={this.handleOnBlur}
-          onInput={this.handleOnInput}
+          value={this.props.defaultValue ? this.props.defaultValue : ''}
+          error={this.props.invalid}
           onChange={this.handleOnChange}
           name='select'
         >
@@ -49,5 +41,12 @@ export default class SelectInput extends React.Component {
 }
 
 SelectInput.propTypes = {
-  onChange: PropTypes.func
+  className: PropTypes.string,
+  id: PropTypes.number,
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+  label: PropTypes.string,
+  helperText: PropTypes.string,
+  invalid: PropTypes.bool,
+  values: PropTypes.array
 }

@@ -6,9 +6,9 @@ import DateInput from './DateInput'
 import SelectInput from './SelectInput'
 import MultipleSelectInput from './MultipleSelectInput'
 import LabelInput from './LabelInput'
-import Grid from '@material-ui/core/Grid'
 import _ from 'lodash'
-
+import './index.css'
+let Validator = require('validatorjs')
 const components = {
   TextInput: TextInput,
   NumberInput: NumberInput,
@@ -22,44 +22,57 @@ export default class Form extends React.Component {
     super(props)
     this.onChange = this.onChange.bind(this)
   }
-  onChange(event) {
+  onChange(event, metaData) {
     let elements = _.cloneDeep(this.props.elements)
     elements = _.map(elements, element => {
-      if (element.id === event.id) _.assign(element, event)
+      if (element.id === event.id) {
+        _.assign(element, event)
+        this.validation(metaData, event, element)
+      }
       return element
     })
-    elements = this.addDynamicFields(elements, event)
     this.props.onChange(elements)
   }
-  addDynamicFields(elements, event) {
-    let filter = _.filter(elements, { id: event.id })
-    if (!_.isEmpty(filter) && _.get(filter[0], 'dynamic')) {
-      let element = _.cloneDeep(filter[0])
-      _.mapKeys(element.dynamic, (values, key) => {
-        if (key !== element.value) _.pullAllBy(elements, values, 'type')
-      })
-      if (_.findIndex(elements, element.dynamic[event.value][0]) === -1) { elements.push(...element.dynamic[event.value])}
+  validation(metaData, event, element) {
+    if (!_.isEmpty(_.get(metaData, 'validation', {}))) {
+      const data = {
+        [event.id]: event.value
+      }
+      const rules = {
+        [event.id]: metaData.validation
+      }
+      let validation = new Validator(data, rules)
+      if (validation.passes()) {
+        element.invalid = false
+      } else {
+        element.invalid = true
+      }
     }
-    return _.sortBy(elements, ['id'])
   }
   renderElement(element) {
     let metadata = this.props.metaData[element.type]
     const Annotation = _.cloneDeep(components)[metadata.type]
     if (_.get(element, 'value')) metadata['defaultValue'] = element.value
-    if (_.get(element, 'invalid')) metadata['invalid'] = element.invalid
+    metadata['invalid'] = _.get(element, 'invalid', false)
     return (
-      <Grid item xs={element.xs} >
-        <Annotation id={element.id} onChange={this.onChange} {...metadata} />
-      </Grid>
+      <Annotation key={element.id} id={element.id}
+        onChange={
+          (event) => this.onChange(event, metadata)
+        } {...metadata
+        }
+      />
     )
   }
   render() {
-    return <Grid container spacing={24}>{_.map(this.props.elements, (element, key) => this.renderElement(element))}</Grid>
+    return <div className={_.get(this.props, 'className', 'reactjsondynamicform')}>
+      { _.map(this.props.elements, (element, key) => this.renderElement(element))
+      }</div>
   }
 }
 
 Form.propTypes = {
   elements: PropTypes.array,
   onChange: PropTypes.func,
-  metaData: PropTypes.object
+  metaData: PropTypes.object,
+  className: PropTypes.string
 }
