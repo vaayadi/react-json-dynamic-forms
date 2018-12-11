@@ -4,7 +4,6 @@ import ReactJsonDynamicForms from 'react-json-dynamic-forms'
 import metaData from './metaData'
 export default class App extends Component {
   constructor(props) {
-  console.log(metaData);
     super(props)
     this.state = {
       elements: [
