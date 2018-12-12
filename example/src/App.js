@@ -7,12 +7,14 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: 0, type: 'firstName', value: 'Bruce'},
+        { id: 0, type: 'firstName', value: ''},
         { id: 1, type: 'lastName', value: 'Lee'},
         { id: 2, type: 'age', value: '18'},
         { id: 3, type: 'dob'},
         { id: 4, type: 'gender'},
         { id: 5, type: 'hobbies'},
+        { id: 6, type: 'education'},
+        { id: 7, type: 'extraCurricular'},
       ]
     }
     this.onChange = this.onChange.bind(this)

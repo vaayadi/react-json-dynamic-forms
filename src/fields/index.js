@@ -5,6 +5,7 @@ import MuNumberInput from './MuNumberInput'
 import MuDateInput from './MuDateInput'
 import MuSelectInput from './MuSelectInput'
 import MuMultipleSelectInput from './MuMultipleSelectInput'
+import BsTextInput from './BsTextInput'
 import LabelInput from './LabelInput'
 import _ from 'lodash'
 import './index.css'
@@ -15,7 +16,8 @@ const components = {
   MuDateInput: MuDateInput,
   MuSelectInput: MuSelectInput,
   MuMultipleSelectInput: MuMultipleSelectInput,
-  LabelInput: LabelInput
+  LabelInput: LabelInput,
+  BsTextInput: BsTextInput
 }
 export default class Form extends React.Component {
   constructor(props) {

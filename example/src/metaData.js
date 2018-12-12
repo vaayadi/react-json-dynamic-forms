@@ -1,6 +1,6 @@
 const metaData = {
   firstName: {
-    type: 'MuTextInput',
+    type: 'BsTextInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
@@ -64,6 +64,42 @@ const metaData = {
     label: '',
     placeholder: '',
     helperText: 'Hobbies',
+    className: 'hobbies',
+    dataType: 'string',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  education: {
+    type: 'MuMultipleSelectInput',
+    label: '',
+    placeholder: '',
+    helperText: 'education',
+    className: 'hobbies',
+    dataType: 'string',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  extraCurricular: {
+    type: 'MuMultipleSelectInput',
+    label: '',
+    placeholder: '',
+    helperText: 'extraCurricular',
     className: 'hobbies',
     dataType: 'string',
     values: [
