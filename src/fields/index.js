@@ -65,8 +65,8 @@ export default class Form extends React.Component {
   }
   render() {
     return <div className={_.get(this.props, 'className', 'reactjsondynamicform')}>
-      { _.map(this.props.elements, (element, key) => this.renderElement(element))
-      }</div>
+      { _.map(this.props.elements, (element, key) => this.renderElement(element))}
+    </div>
   }
 }
 
