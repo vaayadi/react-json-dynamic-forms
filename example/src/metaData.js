@@ -1,6 +1,6 @@
 const metaData = {
   firstName: {
-    type: 'TextInput',
+    type: 'MuTextInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
@@ -11,7 +11,7 @@ const metaData = {
     validation: 'required'
   },
   lastName: {
-    type: 'TextInput',
+    type: 'MuTextInput',
     label: 'last name',
     placeholder: 'Name',
     helperText: 'last name',
@@ -23,7 +23,7 @@ const metaData = {
     validation: 'required'
   },
   age: {
-    type: 'NumberInput',
+    type: 'MuNumberInput',
     label: 'age',
     placeholder: 'age',
     className: 'age',
@@ -33,7 +33,7 @@ const metaData = {
     validation: 'required|min:18',
   },
   dob: {
-    type: 'DateInput',
+    type: 'MuDateInput',
     label: '',
     placeholder: '',
     className: 'dob',
@@ -42,7 +42,7 @@ const metaData = {
     values: null
   },
   gender: {
-    type: 'SelectInput',
+    type: 'MuSelectInput',
     label: 'Select',
     placeholder: '',
     className: 'gender',
@@ -60,7 +60,7 @@ const metaData = {
     ]
   },
   hobbies: {
-    type: 'MultipleSelectInput',
+    type: 'MuMultipleSelectInput',
     label: '',
     placeholder: '',
     helperText: 'Hobbies',

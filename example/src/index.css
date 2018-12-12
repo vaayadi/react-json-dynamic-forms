@@ -10,20 +10,27 @@ body {
   text-align: center;
 }
 .firstName {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }
+
 .lastName {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }
 .age {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }
 .dob {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }
 .gender {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }
 .hobbies {
-  width: 250px;
+  width: 350px;
+  margin: 20px !important;
 }

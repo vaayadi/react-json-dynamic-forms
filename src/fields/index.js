@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TextInput from './TextInput'
-import NumberInput from './NumberInput'
-import DateInput from './DateInput'
-import SelectInput from './SelectInput'
-import MultipleSelectInput from './MultipleSelectInput'
+import MuTextInput from './MuTextInput'
+import MuNumberInput from './MuNumberInput'
+import MuDateInput from './MuDateInput'
+import MuSelectInput from './MuSelectInput'
+import MuMultipleSelectInput from './MuMultipleSelectInput'
 import LabelInput from './LabelInput'
 import _ from 'lodash'
 import './index.css'
 let Validator = require('validatorjs')
 const components = {
-  TextInput: TextInput,
-  NumberInput: NumberInput,
-  DateInput: DateInput,
-  SelectInput: SelectInput,
-  MultipleSelectInput: MultipleSelectInput,
+  MuTextInput: MuTextInput,
+  MuNumberInput: MuNumberInput,
+  MuDateInput: MuDateInput,
+  MuSelectInput: MuSelectInput,
+  MuMultipleSelectInput: MuMultipleSelectInput,
   LabelInput: LabelInput
 }
 export default class Form extends React.Component {
