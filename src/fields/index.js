@@ -1,28 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MuTextInput from './MuTextInput'
-import MuNumberInput from './MuNumberInput'
-import MuDateInput from './MuDateInput'
-import MuSelectInput from './MuSelectInput'
-import MuMultipleSelectInput from './MuMultipleSelectInput'
-import BsTextInput from './BsTextInput'
-import LabelInput from './LabelInput'
+import MuTextInput from './materialUiFields/MuTextInput'
+import MuNumberInput from './materialUiFields/MuNumberInput'
+import MuDateInput from './materialUiFields/MuDateInput'
+import MuSelectInput from './materialUiFields/MuSelectInput'
+import MuMultipleSelectInput from './materialUiFields/MuMultipleSelectInput'
+import BsTextInput from './bootstrapFields/BsTextInput'
+import LabelInput from './htmlFields/LabelInput'
 import _ from 'lodash'
 import './index.css'
 let Validator = require('validatorjs')
-const components = {
-  MuTextInput: MuTextInput,
-  MuNumberInput: MuNumberInput,
-  MuDateInput: MuDateInput,
-  MuSelectInput: MuSelectInput,
-  MuMultipleSelectInput: MuMultipleSelectInput,
-  LabelInput: LabelInput,
-  BsTextInput: BsTextInput
-}
 export default class Form extends React.Component {
   constructor(props) {
     super(props)
     this.onChange = this.onChange.bind(this)
+    this.mergeCustomComponents = this.mergeCustomComponents.bind(this)
   }
   onChange(event, metaData) {
     let elements = _.cloneDeep(this.props.elements)
@@ -51,9 +43,23 @@ export default class Form extends React.Component {
       }
     }
   }
+  mergeCustomComponents() {
+    const components = {
+      MuTextInput,
+      MuNumberInput,
+      MuDateInput,
+      MuSelectInput,
+      MuMultipleSelectInput,
+      LabelInput,
+      BsTextInput,
+      ..._.get(this.props, 'customComponents', {})
+    }
+    return components
+  }
   renderElement(element) {
+    const _components = this.mergeCustomComponents()
     let metadata = this.props.metaData[element.type]
-    const Annotation = _.cloneDeep(components)[metadata.type]
+    const Annotation = _.cloneDeep(_components)[metadata.type]
     if (_.get(element, 'value')) metadata['defaultValue'] = element.value
     metadata['invalid'] = _.get(element, 'invalid', false)
     return (
@@ -76,5 +82,6 @@ Form.propTypes = {
   elements: PropTypes.array,
   onChange: PropTypes.func,
   metaData: PropTypes.object,
-  className: PropTypes.string
+  className: PropTypes.string,
+  customComponents: PropTypes.object
 }
