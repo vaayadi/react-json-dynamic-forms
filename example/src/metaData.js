@@ -1,16 +1,16 @@
 const metaData = {
-  location: {
+  email: {
     type: 'customInput',
-    label: 'location',
-    placeholder: 'location',
-    helperText: 'location',
+    label: 'email',
+    placeholder: 'email',
+    helperText: 'email',
     disabled: false,
     readOnly: false,
     values: null,
-    validation: 'required'
+    validation: 'required|email'
   },
   firstName: {
-    type: 'BsTextInput',
+    type: 'BsTextAreaInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
@@ -52,7 +52,7 @@ const metaData = {
     values: null
   },
   gender: {
-    type: 'MuSelectInput',
+    type: 'BsSelectInput',
     label: 'Select',
     placeholder: '',
     className: 'gender',
@@ -67,10 +67,11 @@ const metaData = {
         label: 'female',
         value: 'female'
       }
-    ]
+    ],
+    validation: 'required'
   },
   hobbies: {
-    type: 'MuMultipleSelectInput',
+    type: 'BsMultipleSelectInput',
     label: '',
     placeholder: '',
     helperText: 'Hobbies',

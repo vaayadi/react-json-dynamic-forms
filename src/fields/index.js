@@ -6,6 +6,10 @@ import MuDateInput from './materialUiFields/MuDateInput'
 import MuSelectInput from './materialUiFields/MuSelectInput'
 import MuMultipleSelectInput from './materialUiFields/MuMultipleSelectInput'
 import BsTextInput from './bootstrapFields/BsTextInput'
+import BsSelectInput from './bootstrapFields/BsSelectInput'
+import BsMultipleSelectInput from './bootstrapFields/BsMultipleSelectInput'
+import BsTextAreaInput from './bootstrapFields/BsTextAreaInput'
+
 import LabelInput from './htmlFields/LabelInput'
 import _ from 'lodash'
 import './index.css'
@@ -52,6 +56,9 @@ export default class Form extends React.Component {
       MuMultipleSelectInput,
       LabelInput,
       BsTextInput,
+      BsSelectInput,
+      BsMultipleSelectInput,
+      BsTextAreaInput,
       ..._.get(this.props, 'customComponents', {})
     }
     return components
