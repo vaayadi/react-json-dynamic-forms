@@ -1,0 +1,9 @@
+.customInput {
+  display: grid;
+  width: 350px;
+  margin: 20px !important;
+}
+
+.focusError {
+  border: 1px solid red;
+}

@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import ReactJsonDynamicForms from 'react-json-dynamic-forms'
 import metaData from './metaData'
 import './index.css'
+import customInput from './customInput'
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       elements: [
+        { id: -1, type: 'location', value: ''},
         { id: 0, type: 'firstName', value: ''},
         { id: 1, type: 'lastName', value: 'Lee'},
         { id: 2, type: 'age', value: '18'},
@@ -23,12 +25,14 @@ export default class App extends Component {
     this.setState({ elements: elements })
   }
   render() {
+    const _customComponents = {customInput}
     return (
     <ReactJsonDynamicForms
       elements={this.state.elements}
       onChange={this.onChange}
       metaData={metaData}
       className='reactform'
+      customComponents= {_customComponents}
     />)
   }
 }

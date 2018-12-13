@@ -1,4 +1,14 @@
 const metaData = {
+  location: {
+    type: 'customInput',
+    label: 'location',
+    placeholder: 'location',
+    helperText: 'location',
+    disabled: false,
+    readOnly: false,
+    values: null,
+    validation: 'required'
+  },
   firstName: {
     type: 'BsTextInput',
     label: 'first name',
