@@ -8,9 +8,9 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: -1, type: 'email', value: ''},
-        { id: 0, type: 'firstName', value: ''},
-        { id: 1, type: 'lastName', value: 'Lee'},
+        { id: -1, type: 'email', value: 'Custom Input'},
+        { id: 0, type: 'firstName', value: 'Bootstarp Input'},
+        { id: 1, type: 'lastName', value: 'MaterialUi Input'},
         { id: 2, type: 'age', value: '18'},
         { id: 3, type: 'dob'},
         { id: 4, type: 'gender', value: 'female'},

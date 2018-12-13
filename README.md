@@ -22,12 +22,12 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: -1, type: 'location', value: ''},
-        { id: 0, type: 'firstName', value: ''},
-        { id: 1, type: 'lastName', value: 'Lee'},
+        { id: -1, type: 'email', value: 'Custom Input'},
+        { id: 0, type: 'firstName', value: 'Bootstarp Input'},
+        { id: 1, type: 'lastName', value: 'MaterialUi Input'},
         { id: 2, type: 'age', value: '18'},
         { id: 3, type: 'dob'},
-        { id: 4, type: 'gender'},
+        { id: 4, type: 'gender', value: 'female'},
         { id: 5, type: 'hobbies'},
         { id: 6, type: 'education'},
         { id: 7, type: 'extraCurricular'},
@@ -56,18 +56,18 @@ App.propTypes = {
 ```
 ```jsx
 const metaData = {
-  location: {
+  email: {
     type: 'customInput',
-    label: 'location',
-    placeholder: 'location',
-    helperText: 'location',
+    label: 'email',
+    placeholder: 'email',
+    helperText: 'email',
     disabled: false,
     readOnly: false,
     values: null,
-    validation: 'required'
+    validation: 'required|email'
   },
   firstName: {
-    type: 'BsTextInput',
+    type: 'BsTextAreaInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
@@ -109,7 +109,7 @@ const metaData = {
     values: null
   },
   gender: {
-    type: 'MuSelectInput',
+    type: 'BsSelectInput',
     label: 'Select',
     placeholder: '',
     className: 'gender',
@@ -124,10 +124,11 @@ const metaData = {
         label: 'female',
         value: 'female'
       }
-    ]
+    ],
+    validation: 'required'
   },
   hobbies: {
-    type: 'MuMultipleSelectInput',
+    type: 'BsMultipleSelectInput',
     label: '',
     placeholder: '',
     helperText: 'Hobbies',
