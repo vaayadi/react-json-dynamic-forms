@@ -16,17 +16,21 @@ import React, { Component } from 'react'
 import ReactJsonDynamicForms from 'react-json-dynamic-forms'
 import metaData from './metaData'
 import './index.css'
+import customInput from './customInput'
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       elements: [
-        { id: 0, type: 'firstName', value: 'Bruce'},
+        { id: -1, type: 'location', value: ''},
+        { id: 0, type: 'firstName', value: ''},
         { id: 1, type: 'lastName', value: 'Lee'},
         { id: 2, type: 'age', value: '18'},
         { id: 3, type: 'dob'},
         { id: 4, type: 'gender'},
         { id: 5, type: 'hobbies'},
+        { id: 6, type: 'education'},
+        { id: 7, type: 'extraCurricular'},
       ]
     }
     this.onChange = this.onChange.bind(this)
@@ -35,12 +39,14 @@ export default class App extends Component {
     this.setState({ elements: elements })
   }
   render() {
+    const _customComponents = {customInput}
     return (
     <ReactJsonDynamicForms
       elements={this.state.elements}
       onChange={this.onChange}
       metaData={metaData}
       className='reactform'
+      customComponents= {_customComponents}
     />)
   }
 }
@@ -50,18 +56,29 @@ App.propTypes = {
 ```
 ```jsx
 const metaData = {
+  location: {
+    type: 'customInput',
+    label: 'location',
+    placeholder: 'location',
+    helperText: 'location',
+    disabled: false,
+    readOnly: false,
+    values: null,
+    validation: 'required'
+  },
   firstName: {
-    type: 'TextInput',
+    type: 'BsTextInput',
     label: 'first name',
     placeholder: 'first name',
     helperText: 'First Name',
     disabled: false,
     className: 'firstName',
     readOnly: false,
-    values: null
+    values: null,
+    validation: 'required'
   },
   lastName: {
-    type: 'TextInput',
+    type: 'MuTextInput',
     label: 'last name',
     placeholder: 'Name',
     helperText: 'last name',
@@ -69,10 +86,11 @@ const metaData = {
     className: 'lastName',
     readOnly: false,
     dataType: 'string',
-    values: null
+    values: null,
+    validation: 'required'
   },
   age: {
-    type: 'NumberInput',
+    type: 'MuNumberInput',
     label: 'age',
     placeholder: 'age',
     className: 'age',
@@ -82,7 +100,7 @@ const metaData = {
     validation: 'required|min:18',
   },
   dob: {
-    type: 'DateInput',
+    type: 'MuDateInput',
     label: '',
     placeholder: '',
     className: 'dob',
@@ -91,7 +109,7 @@ const metaData = {
     values: null
   },
   gender: {
-    type: 'SelectInput',
+    type: 'MuSelectInput',
     label: 'Select',
     placeholder: '',
     className: 'gender',
@@ -109,10 +127,46 @@ const metaData = {
     ]
   },
   hobbies: {
-    type: 'MultipleSelectInput',
+    type: 'MuMultipleSelectInput',
     label: '',
     placeholder: '',
     helperText: 'Hobbies',
+    className: 'hobbies',
+    dataType: 'string',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  education: {
+    type: 'MuMultipleSelectInput',
+    label: '',
+    placeholder: '',
+    helperText: 'education',
+    className: 'hobbies',
+    dataType: 'string',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  extraCurricular: {
+    type: 'MuMultipleSelectInput',
+    label: '',
+    placeholder: '',
+    helperText: 'extraCurricular',
     className: 'hobbies',
     dataType: 'string',
     values: [
