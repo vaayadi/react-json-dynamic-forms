@@ -51,7 +51,7 @@ export default class MultipleSelectInput extends React.Component {
 
 MultipleSelectInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   onChange: PropTypes.func,
   label: PropTypes.string,
   helperText: PropTypes.string,

@@ -32,7 +32,7 @@ export default class customInput extends PureComponent {
 
 customInput.propTypes = {
     className: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.any,
     defaultValue: PropTypes.string,
     placeholder: PropTypes.string,
     onChange: PropTypes.func,

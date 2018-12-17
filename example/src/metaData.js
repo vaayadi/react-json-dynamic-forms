@@ -51,6 +51,43 @@ const metaData = {
     dataType: 'string',
     values: null
   },
+  muDateTime: {
+    type: 'MuDateTimeInput',
+    label: '',
+    placeholder: '',
+    className: 'dob',
+    helperText: 'muDateTime',
+    dataType: 'string',
+    values: null
+  },
+  muRadioInput: {
+    type: 'MuRadioInput',
+    label: '',
+    placeholder: '',
+    className: 'dob',
+    helperText: 'radio',
+    dataType: 'string',
+    values: [
+      {
+        label: 'male',
+        value: 'male'
+      },
+      {
+        label: 'female',
+        value: 'female'
+      }
+    ],
+    validation: 'required'
+  },
+  muTime: {
+    type: 'MuTimeInput',
+    label: '',
+    placeholder: '',
+    className: 'dob',
+    helperText: 'time',
+    dataType: 'string',
+    values: null
+  },
   gender: {
     type: 'BsSelectInput',
     label: 'Select',

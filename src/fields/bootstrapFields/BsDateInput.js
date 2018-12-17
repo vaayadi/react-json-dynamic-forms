@@ -6,7 +6,7 @@ import {
   FormGroup,
   HelpBlock
 } from 'react-bootstrap'
-export default class BsTextInput extends React.Component {
+export default class BsDateInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -17,13 +17,26 @@ export default class BsTextInput extends React.Component {
       value: e.target.value
     })
   }
+  getCurrentDate() {
+    const today = new Date()
+    let dd = today.getDate()
+    let mm = today.getMonth() + 1
+    const yyyy = today.getFullYear()
+    if (dd < 10) {
+      dd = `0${dd}`
+    }
+    if (mm < 10) {
+      mm = `0${mm}`
+    }
+    return `${yyyy}-${mm}-${dd}`
+  }
   render() {
     return (
       <FormGroup className={this.props.className ? this.props.className : ''} validationState={this.props.invalid ? 'error' : null}>
         <ControlLabel>{this.props.label ? this.props.label : ''}</ControlLabel>
         <FormControl
-          type='text'
-          defaultValue={this.props.defaultValue ? this.props.defaultValue : ''}
+          type='date'
+          defaultValue={this.props.defaultValue ? this.props.defaultValue : this.getCurrentDate()}
           onChange={this.handleOnChange}
           placeholder={this.props.placeholder ? this.props.placeholder : ''}
           readOnly={this.props.readOnly ? this.props.readOnly : false}
@@ -35,7 +48,7 @@ export default class BsTextInput extends React.Component {
   }
 }
 
-BsTextInput.propTypes = {
+BsDateInput.propTypes = {
   className: PropTypes.string,
   id: PropTypes.any,
   defaultValue: PropTypes.string,

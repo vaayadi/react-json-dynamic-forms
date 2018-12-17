@@ -5,10 +5,15 @@ import MuNumberInput from './materialUiFields/MuNumberInput'
 import MuDateInput from './materialUiFields/MuDateInput'
 import MuSelectInput from './materialUiFields/MuSelectInput'
 import MuMultipleSelectInput from './materialUiFields/MuMultipleSelectInput'
+import MuDateTimeInput from './materialUiFields/MuDateTimeInput'
+import MuTimeInput from './materialUiFields/MuTimeInput'
+import MuRadioInput from './materialUiFields/MuRadioInput'
+
 import BsTextInput from './bootstrapFields/BsTextInput'
 import BsSelectInput from './bootstrapFields/BsSelectInput'
 import BsMultipleSelectInput from './bootstrapFields/BsMultipleSelectInput'
 import BsTextAreaInput from './bootstrapFields/BsTextAreaInput'
+import BsDateInput from './bootstrapFields/BsDateInput'
 
 import LabelInput from './htmlFields/LabelInput'
 import _ from 'lodash'
@@ -54,18 +59,22 @@ export default class Form extends React.Component {
       MuDateInput,
       MuSelectInput,
       MuMultipleSelectInput,
+      MuDateTimeInput,
+      MuTimeInput,
+      MuRadioInput,
       LabelInput,
       BsTextInput,
       BsSelectInput,
       BsMultipleSelectInput,
       BsTextAreaInput,
+      BsDateInput,
       ..._.get(this.props, 'customComponents', {})
     }
     return components
   }
   renderElement(element) {
     const _components = this.mergeCustomComponents()
-    let metadata = this.props.metaData[element.type]
+    let metadata = this.props.metaData[element.id]
     const Annotation = _.cloneDeep(_components)[metadata.type]
     if (_.get(element, 'value')) metadata['defaultValue'] = element.value
     metadata['invalid'] = _.get(element, 'invalid', false)

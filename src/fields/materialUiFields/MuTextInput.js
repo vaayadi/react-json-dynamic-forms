@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
-export default class TextInput extends React.Component {
+export default class MuTextInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -43,9 +43,9 @@ export default class TextInput extends React.Component {
   }
 }
 
-TextInput.propTypes = {
+MuTextInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,

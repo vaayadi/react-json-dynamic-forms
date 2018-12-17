@@ -33,7 +33,7 @@ export default class NumberInput extends React.Component {
 
 NumberInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   defaultValue: PropTypes.any,
   invalid: PropTypes.bool,
   onChange: PropTypes.func,

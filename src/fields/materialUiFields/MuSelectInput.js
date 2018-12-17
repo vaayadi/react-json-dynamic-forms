@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import _ from 'lodash'
-export default class SelectInput extends React.Component {
+export default class MuSelectInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -40,9 +40,9 @@ export default class SelectInput extends React.Component {
   }
 }
 
-SelectInput.propTypes = {
+MuSelectInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   defaultValue: PropTypes.string,
   onChange: PropTypes.func,
   label: PropTypes.string,

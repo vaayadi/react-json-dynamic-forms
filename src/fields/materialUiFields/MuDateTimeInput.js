@@ -21,14 +21,14 @@ export default class DateInput extends React.Component {
     if (mm < 10) {
       mm = `0${mm}`
     }
-    return `${yyyy}-${mm}-${dd}`
+    return `${yyyy}-${mm}-${dd}T00:00`
   }
   render() {
     return (
       <TextField
         className={this.props.className ? this.props.className : ''}
         onChange={e => this.handleOnChange(e)}
-        type='date'
+        type='datetime-local'
         error={this.props.invalid}
         label={this.props.label}
         placeholder={this.props.placeholder}

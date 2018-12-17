@@ -38,7 +38,7 @@ export default class BsTextAreaInput extends React.Component {
 
 BsTextAreaInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,

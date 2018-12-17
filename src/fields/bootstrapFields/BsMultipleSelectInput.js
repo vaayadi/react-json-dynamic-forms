@@ -50,7 +50,7 @@ export default class BsMultipleSelectInput extends React.Component {
 
 BsMultipleSelectInput.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.any,
   defaultValue: PropTypes.any,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
