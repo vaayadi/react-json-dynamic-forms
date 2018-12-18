@@ -13,6 +13,7 @@ export default class App extends Component {
         { id: 'lastName', value: 'MaterialUi Input'},
         { id: 'age', value: '18'},
         { id: 'dob'},
+        { id: 'muSwitchInput'},
         { id: 'gender', value: 'female'},
         { id: 'hobbies'},
         { id: 'education'},
@@ -20,7 +21,6 @@ export default class App extends Component {
         { id: 'muDateTime'},
         { id: 'muTime'},
         { id: 'muRadioInput'},
-
       ]
     }
     this.onChange = this.onChange.bind(this)

@@ -8,7 +8,8 @@ import MuMultipleSelectInput from './materialUiFields/MuMultipleSelectInput'
 import MuDateTimeInput from './materialUiFields/MuDateTimeInput'
 import MuTimeInput from './materialUiFields/MuTimeInput'
 import MuRadioInput from './materialUiFields/MuRadioInput'
-
+import MuCheckboxInput from './materialUiFields/MuCheckboxInput'
+import MuSwitchInput from './materialUiFields/MuSwitchInput'
 import BsTextInput from './bootstrapFields/BsTextInput'
 import BsSelectInput from './bootstrapFields/BsSelectInput'
 import BsMultipleSelectInput from './bootstrapFields/BsMultipleSelectInput'
@@ -62,6 +63,8 @@ export default class Form extends React.Component {
       MuDateTimeInput,
       MuTimeInput,
       MuRadioInput,
+      MuCheckboxInput,
+      MuSwitchInput,
       LabelInput,
       BsTextInput,
       BsSelectInput,
@@ -76,7 +79,7 @@ export default class Form extends React.Component {
     const _components = this.mergeCustomComponents()
     let metadata = this.props.metaData[element.id]
     const Annotation = _.cloneDeep(_components)[metadata.type]
-    if (_.get(element, 'value')) metadata['defaultValue'] = element.value
+    metadata['defaultValue'] = _.get(element, 'value', '')
     metadata['invalid'] = _.get(element, 'invalid', false)
     return (
       <Annotation key={element.id} id={element.id}

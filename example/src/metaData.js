@@ -60,6 +60,14 @@ const metaData = {
     dataType: 'string',
     values: null
   },
+  muSwitchInput: {
+    type: 'MuSwitchInput',
+    label: 'Checkbox',
+    placeholder: '',
+    className: 'dob',
+    dataType: 'string',
+    values: null
+  },
   muRadioInput: {
     type: 'MuRadioInput',
     label: '',
