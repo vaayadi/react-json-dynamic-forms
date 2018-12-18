@@ -64,7 +64,7 @@ const metaData = {
 
   },
   muRadioInput: {
-    type: 'MuRadioInput',
+    type: 'BsRadioInput',
     label: 'muRadioInput',
     placeholder: '',
     className: 'fields',
@@ -125,6 +125,91 @@ const metaData = {
     label: 'muTimeInput',
     placeholder: '',
     helperText: 'muTimeInput',
+    className: 'fields'
+  },
+  bsCheckboxInput: {
+    type: 'BsCheckboxInput',
+    label: 'BsCheckboxInput',
+    disabled: false,
+    className: 'fields',
+    readOnly: false,
+    values: null,
+    validation: 'required'
+  },
+  bsDateInput: {
+    type: 'BsDateInput',
+    label: 'BsDateInput',
+    helperText: 'BsDateInput',
+    disabled: false,
+    className: 'fields',
+    readOnly: false,
+    values: null,
+    validation: 'required'
+  },
+  bsMultipleSelectInput: {
+    type: 'BsMultipleSelectInput',
+    label: 'bsMultipleSelectInput',
+    placeholder: '',
+    className: 'fields',
+    helperText: 'Date of Birth',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  bsRadioInput: {
+    type: 'BsRadioInput',
+    label: 'bsRadioInput',
+    placeholder: '',
+    className: 'fields',
+    values: [
+      {
+        label: 'male',
+        value: 'male'
+      },
+      {
+        label: 'female',
+        value: 'female'
+      }
+    ],
+  },
+  bsSelectInput: {
+    type: 'BsSelectInput',
+    label: 'bsSelectInput',
+    placeholder: '',
+    className: 'fields',
+    helperText: 'radio',
+    values: [
+      {
+        label: 'male',
+        value: 'male'
+      },
+      {
+        label: 'female',
+        value: 'female'
+      }
+    ],
+    validation: 'required'
+  },
+  bsTextAreaInput: {
+    type: 'BsTextAreaInput',
+    label: 'bsTextAreaInput',
+    placeholder: '',
+    className: 'fields',
+    helperText: 'bsTextAreaInput',
+    validation: 'required'
+  },
+  bsTextInput: {
+    type: 'BsTextInput',
+    label: 'bsTextInput',
+    placeholder: '',
+    helperText: 'bsTextInput',
     className: 'fields'
   }
 }

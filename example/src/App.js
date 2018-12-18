@@ -20,6 +20,13 @@ export default class App extends Component {
         { id: 'muTextAreaInput', value: 'three'},
         { id: 'muTextInput', value: 'four'},
         { id: 'muTimeInput'},
+        { id: 'bsCheckboxInput'},
+        { id: 'bsDateInput'},
+        { id: 'bsMultipleSelectInput'},
+        { id: 'bsRadioInput', value: 'male'},
+        { id: 'bsSelectInput'},
+        { id: 'bsTextAreaInput'},
+        { id: 'bsTextInput'},
       ]
     }
     this.onChange = this.onChange.bind(this)

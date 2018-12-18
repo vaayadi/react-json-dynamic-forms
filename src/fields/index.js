@@ -16,7 +16,8 @@ import BsSelectInput from './bootstrapFields/BsSelectInput'
 import BsMultipleSelectInput from './bootstrapFields/BsMultipleSelectInput'
 import BsTextAreaInput from './bootstrapFields/BsTextAreaInput'
 import BsDateInput from './bootstrapFields/BsDateInput'
-
+import BsRadioInput from './bootstrapFields/BsRadioInput'
+import BsCheckboxInput from './bootstrapFields/BsCheckboxInput'
 import LabelInput from './htmlFields/LabelInput'
 import _ from 'lodash'
 import './index.css'
@@ -73,6 +74,8 @@ export default class Form extends React.Component {
       BsMultipleSelectInput,
       BsTextAreaInput,
       BsDateInput,
+      BsRadioInput,
+      BsCheckboxInput,
       ..._.get(this.props, 'customComponents', {})
     }
     return components
