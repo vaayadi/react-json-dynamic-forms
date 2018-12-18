@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
 
-export default class NumberInput extends React.Component {
+export default class MuNumberInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -31,7 +31,7 @@ export default class NumberInput extends React.Component {
   }
 }
 
-NumberInput.propTypes = {
+MuNumberInput.propTypes = {
   className: PropTypes.string,
   id: PropTypes.any,
   defaultValue: PropTypes.any,

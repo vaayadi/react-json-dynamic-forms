@@ -9,28 +9,7 @@ body {
   flex-flow: column;
   text-align: center;
 }
-.firstName {
-  width: 350px;
-  margin: 20px !important;
-}
-
-.lastName {
-  width: 350px;
-  margin: 20px !important;
-}
-.age {
-  width: 350px;
-  margin: 20px !important;
-}
-.dob {
-  width: 350px;
-  margin: 20px !important;
-}
-.gender {
-  width: 350px;
-  margin: 20px !important;
-}
-.hobbies {
+.fields {
   width: 350px;
   margin: 20px !important;
 }

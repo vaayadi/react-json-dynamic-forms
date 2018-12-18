@@ -8,7 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 import ListItemText from '@material-ui/core/ListItemText'
 import Checkbox from '@material-ui/core/Checkbox'
 import _ from 'lodash'
-export default class MultipleSelectInput extends React.Component {
+export default class MuMultipleSelectInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -49,7 +49,7 @@ export default class MultipleSelectInput extends React.Component {
   }
 }
 
-MultipleSelectInput.propTypes = {
+MuMultipleSelectInput.propTypes = {
   className: PropTypes.string,
   id: PropTypes.any,
   onChange: PropTypes.func,

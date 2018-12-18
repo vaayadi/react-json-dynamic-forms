@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
 import _ from 'lodash'
-export default class DateInput extends React.Component {
+export default class MuDateTimeInput extends React.Component {
   constructor(props) {
     super(props)
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -43,7 +43,7 @@ export default class DateInput extends React.Component {
   }
 }
 
-DateInput.propTypes = {
+MuDateTimeInput.propTypes = {
   className: PropTypes.string,
   id: PropTypes.any,
   onChange: PropTypes.func,

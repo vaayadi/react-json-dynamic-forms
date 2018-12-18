@@ -10,6 +10,7 @@ import MuTimeInput from './materialUiFields/MuTimeInput'
 import MuRadioInput from './materialUiFields/MuRadioInput'
 import MuCheckboxInput from './materialUiFields/MuCheckboxInput'
 import MuSwitchInput from './materialUiFields/MuSwitchInput'
+import MuTextAreaInput from './materialUiFields/MuTextAreaInput'
 import BsTextInput from './bootstrapFields/BsTextInput'
 import BsSelectInput from './bootstrapFields/BsSelectInput'
 import BsMultipleSelectInput from './bootstrapFields/BsMultipleSelectInput'
@@ -65,6 +66,7 @@ export default class Form extends React.Component {
       MuRadioInput,
       MuCheckboxInput,
       MuSwitchInput,
+      MuTextAreaInput,
       LabelInput,
       BsTextInput,
       BsSelectInput,

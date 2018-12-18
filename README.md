@@ -22,19 +22,18 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: 'email', value: 'Custom Input'},
-        { id: 'firstName', value: 'Bootstarp Input'},
-        { id: 'lastName', value: 'MaterialUi Input'},
-        { id: 'age', value: '18'},
-        { id: 'dob'},
-        { id: 'gender', value: 'female'},
-        { id: 'hobbies'},
-        { id: 'education'},
-        { id: 'extraCurricular'},
-        { id: 'muDateTime'},
-        { id: 'muTime'},
-        { id: 'muRadioInput'},
-
+        { id: 'customInput', value: 'Custom Input'},
+        { id: 'muCheckboxInput'},
+        { id: 'muDateInput'},
+        { id: 'muDateTimeInput'},
+        { id: 'muMultipleSelectInput'},
+        { id: 'muNumberInput'},
+        { id: 'muRadioInput', value: 'female'},
+        { id: 'muSelectInput'},
+        { id: 'muSwitchInput', value: true},
+        { id: 'muTextAreaInput', value: 'three'},
+        { id: 'muTextInput', value: 'four'},
+        { id: 'muTimeInput'},
       ]
     }
     this.onChange = this.onChange.bind(this)
@@ -55,80 +54,97 @@ export default class App extends Component {
     />)
   }
 }
-
 App.propTypes = {
 }
 ```
 ```jsx
 const metaData = {
-  email: {
+  customInput: {
     type: 'customInput',
-    label: 'email',
+    label: 'customInput',
     placeholder: 'email',
-    helperText: 'email',
+    helperText: 'customInput',
     disabled: false,
     readOnly: false,
     values: null,
-    validation: 'required|email'
+    validation: 'required|email',
+    className: 'customInput'
   },
-  firstName: {
-    type: 'BsTextAreaInput',
-    label: 'first name',
-    placeholder: 'first name',
-    helperText: 'First Name',
+  muCheckboxInput: {
+    type: 'MuCheckboxInput',
+    label: 'muCheckboxInput',
     disabled: false,
-    className: 'firstName',
+    className: 'fields',
     readOnly: false,
     values: null,
     validation: 'required'
   },
-  lastName: {
-    type: 'MuTextInput',
-    label: 'last name',
-    placeholder: 'Name',
-    helperText: 'last name',
+  muDateInput: {
+    type: 'MuDateInput',
+    label: 'muDateInput',
+    helperText: 'muDateInput',
     disabled: false,
-    className: 'lastName',
+    className: 'fields',
     readOnly: false,
-    dataType: 'string',
     values: null,
     validation: 'required'
   },
-  age: {
+  muDateTimeInput: {
+    type: 'MuDateTimeInput',
+    label: 'muDateTimeInput',
+    className: 'fields',
+    helperText: 'muDateTimeInput',
+    values: null,
+  },
+  muMultipleSelectInput: {
+    type: 'MuMultipleSelectInput',
+    label: 'muMultipleSelectInput',
+    placeholder: '',
+    className: 'fields',
+    helperText: 'Date of Birth',
+    values: [
+      {
+        label: 'cricket',
+        value: 'cricket'
+      },
+      {
+        label: 'vollyball',
+        value: 'vollyball'
+      }
+    ]
+  },
+  muNumberInput: {
     type: 'MuNumberInput',
-    label: 'age',
-    placeholder: 'age',
-    className: 'age',
-    helperText: 'Age',
-    dataType: 'number',
+    label: 'muNumberInput',
+    placeholder: '',
+    className: 'fields',
+    helperText: 'muNumberInput',
     values: null,
     validation: 'required|min:18',
-  },
-  dob: {
-    type: 'MuDateInput',
-    label: '',
-    placeholder: '',
-    className: 'dob',
-    helperText: 'Date of Birth',
-    dataType: 'string',
-    values: null
-  },
-  muDateTime: {
-    type: 'MuDateTimeInput',
-    label: '',
-    placeholder: '',
-    className: 'dob',
-    helperText: 'muDateTime',
-    dataType: 'string',
-    values: null
+
   },
   muRadioInput: {
     type: 'MuRadioInput',
-    label: '',
+    label: 'muRadioInput',
     placeholder: '',
-    className: 'dob',
+    className: 'fields',
+    values: [
+      {
+        label: 'male',
+        value: 'male'
+      },
+      {
+        label: 'female',
+        value: 'female'
+      }
+    ],
+  },
+  muSelectInput: {
+    type: 'MuSelectInput',
+    label: 'muSelectInput',
+    placeholder: '',
+    className: 'fields',
     helperText: 'radio',
-    dataType: 'string',
     values: [
       {
         label: 'male',
@@ -141,87 +157,35 @@ const metaData = {
     ],
     validation: 'required'
   },
-  muTime: {
-    type: 'MuTimeInput',
-    label: '',
+  muSwitchInput: {
+    type: 'MuSwitchInput',
+    label: 'muSwitchInput',
     placeholder: '',
-    className: 'dob',
-    helperText: 'time',
-    dataType: 'string',
+    className: 'fields',
+    helperText: 'MuSwitchInput',
     values: null
   },
-  gender: {
-    type: 'BsSelectInput',
-    label: 'Select',
+  muTextAreaInput: {
+    type: 'MuTextAreaInput',
+    label: 'muTextAreaInput',
     placeholder: '',
-    className: 'gender',
-    helperText: 'Gender',
-    dataType: 'string',
-    values: [
-      {
-        label: 'male',
-        value: 'male'
-      },
-      {
-        label: 'female',
-        value: 'female'
-      }
-    ],
+    className: 'fields',
+    helperText: 'muTextAreaInput',
     validation: 'required'
   },
-  hobbies: {
-    type: 'BsMultipleSelectInput',
-    label: '',
+  muTextInput: {
+    type: 'MuTextInput',
+    label: 'muTextInput',
     placeholder: '',
-    helperText: 'Hobbies',
-    className: 'hobbies',
-    dataType: 'string',
-    values: [
-      {
-        label: 'cricket',
-        value: 'cricket'
-      },
-      {
-        label: 'vollyball',
-        value: 'vollyball'
-      }
-    ]
+    helperText: 'muTextInput',
+    className: 'fields'
   },
-  education: {
-    type: 'MuMultipleSelectInput',
-    label: '',
+  muTimeInput: {
+    type: 'MuTimeInput',
+    label: 'muTimeInput',
     placeholder: '',
-    helperText: 'education',
-    className: 'hobbies',
-    dataType: 'string',
-    values: [
-      {
-        label: 'cricket',
-        value: 'cricket'
-      },
-      {
-        label: 'vollyball',
-        value: 'vollyball'
-      }
-    ]
-  },
-  extraCurricular: {
-    type: 'MuMultipleSelectInput',
-    label: '',
-    placeholder: '',
-    helperText: 'extraCurricular',
-    className: 'hobbies',
-    dataType: 'string',
-    values: [
-      {
-        label: 'cricket',
-        value: 'cricket'
-      },
-      {
-        label: 'vollyball',
-        value: 'vollyball'
-      }
-    ]
+    helperText: 'muTimeInput',
+    className: 'fields'
   }
 }
 export default metaData

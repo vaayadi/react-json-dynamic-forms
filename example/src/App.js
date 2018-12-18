@@ -8,19 +8,18 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: 'email', value: 'Custom Input'},
-        { id: 'firstName', value: 'Bootstarp Input'},
-        { id: 'lastName', value: 'MaterialUi Input'},
-        { id: 'age', value: '18'},
-        { id: 'dob'},
-        { id: 'muSwitchInput'},
-        { id: 'gender', value: 'female'},
-        { id: 'hobbies'},
-        { id: 'education'},
-        { id: 'extraCurricular'},
-        { id: 'muDateTime'},
-        { id: 'muTime'},
-        { id: 'muRadioInput'},
+        { id: 'customInput', value: 'Custom Input'},
+        { id: 'muCheckboxInput'},
+        { id: 'muDateInput'},
+        { id: 'muDateTimeInput'},
+        { id: 'muMultipleSelectInput'},
+        { id: 'muNumberInput'},
+        { id: 'muRadioInput', value: 'female'},
+        { id: 'muSelectInput'},
+        { id: 'muSwitchInput', value: true},
+        { id: 'muTextAreaInput', value: 'three'},
+        { id: 'muTextInput', value: 'four'},
+        { id: 'muTimeInput'},
       ]
     }
     this.onChange = this.onChange.bind(this)
