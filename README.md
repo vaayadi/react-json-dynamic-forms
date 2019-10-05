@@ -1,6 +1,6 @@
 # react-json-dynamic-forms
 
-# Not Stable, Need Contributors
+## Not Stable, Need Contributors
 
 > 
 
@@ -24,7 +24,6 @@ export default class App extends Component {
     super(props)
     this.state = {
       elements: [
-        { id: 'customInput', value: 'Custom Input'},
         { id: 'muCheckboxInput'},
         { id: 'muDateInput'},
         { id: 'muDateTimeInput'},
@@ -61,17 +60,6 @@ App.propTypes = {
 ```
 ```jsx
 const metaData = {
-  customInput: {
-    type: 'customInput',
-    label: 'customInput',
-    placeholder: 'email',
-    helperText: 'customInput',
-    disabled: false,
-    readOnly: false,
-    values: null,
-    validation: 'required|email',
-    className: 'customInput'
-  },
   muCheckboxInput: {
     type: 'MuCheckboxInput',
     label: 'muCheckboxInput',
