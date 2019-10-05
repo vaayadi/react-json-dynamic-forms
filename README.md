@@ -7,7 +7,7 @@ Code Sandbox - https://codesandbox.io/s/exciting-rubin-pi8du?fontsize=14
 
 [![NPM](https://img.shields.io/npm/v/react-json-dynamic-forms.svg)](https://www.npmjs.com/package/react-json-dynamic-forms) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![React Json Dynamic Forms]()](https://youtu.be/cM87HKMUuWw)
+[![React Json Dynamic Forms](https://raw.githubusercontent.com/vaayadi/react-json-dynamic-forms/master/fra.png)](https://youtu.be/cM87HKMUuWw)
 
 
 ## Install
