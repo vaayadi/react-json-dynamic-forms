@@ -2,3 +2,12 @@
     display: flex;
     flex-flow: column;
 }
+.reactform {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+.fields {
+    width: 350px;
+    margin: 20px !important;
+}
