@@ -160,7 +160,7 @@ export default class App extends Component {
     this.setState({ elements: elements })
   }
   render() {
-    const _customComponents = {f}
+    const _customComponents = {}
     return (
     <ReactJsonDynamicForms
       elements={this.state.elements}
