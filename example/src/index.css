@@ -14,6 +14,11 @@ body {
   display: flex;
   flex-flow: column;
   text-align: center;
+  align-content: center;
+  justify-content: center;
+  flex-flow: column;
+  font-size: 2rem;
+  line-height: 3rem;
 }
 .fields {
   width: 350px;
