@@ -1,3 +1,9 @@
+#id {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
 body {
   margin: 0;
   padding: 0;
